@@ -107,7 +107,7 @@ img {
 .nav_link:hover {
   color: #fce38a;
 }
-.nav_link.active::after{
+.nav_link.active::after {
   opacity: 1;
 }
 .nav_link:hover::after {
@@ -198,6 +198,7 @@ img {
 
 .intro_inner {
   width: 100%;
+
   margin: 0 auto;
   text-align: center;
   max-width: 880px;
@@ -208,16 +209,34 @@ img {
   font-family: "Kaushan Script", cursive;
   margin-bottom: 20px;
   color: #fff;
+  animation: suptitle 2s linear;
 }
+@keyframes suptitle {
+  0% {
+    font-size: 0px;
+  }
 
+  1000% {
+    font-size: 72px;
+  }
+}
 .intro_title {
   font-size: 120px;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
   color: #fff;
   line-height: 1;
+  animation: title 2s linear;
 }
+@keyframes title {
+  0% {
+    font-size: 0px;
+  }
 
+  100% {
+    font-size: 120px;
+  }
+}
 .intro_title::after {
   content: "";
   display: block;
@@ -529,6 +548,17 @@ img {
 
 .accordion_item.active .accordion_content {
   display: block;
+  animation: open 2s linear;
+}
+@keyframes open {
+  0% {
+    margin-top: -60px;
+    font-size: 0;
+  }
+  100% {
+    font-size: 15px;
+    margin-top: 0px;
+  }
 }
 
 .accordion_item.active .accordion_header {
@@ -537,9 +567,11 @@ img {
 
 .accordion_header {
   display: flex;
+  background-color: #fff;
   align-items: center;
   padding: 15px 20px 15px 60px;
   position: relative;
+  z-index: 6;
 }
 
 .accordion_icon {
@@ -574,6 +606,7 @@ img {
   padding: 15px 20px;
   color: #999;
   font-style: italic;
+  z-index: 8;
 }
 
 /*REVIEWS*/
@@ -583,9 +616,9 @@ img {
 
 .reviews {
   position: relative;
- 
 }
-.slick-slider{
+
+.slick-slider {
   padding: 0 110px;
 }
 
@@ -685,7 +718,9 @@ img {
   background: linear-gradient(to bottom, #f38181, #fce38a);
   transition: opacity 0.1s linear;
 }
-
+.work_item img {
+  width: 100%;
+}
 .work_item:hover img {
   opacity: 0.2;
 }
@@ -1140,12 +1175,29 @@ img {
 
   .intro_suptitle {
     font-size: 32px;
+    animation: suptitle 2s linear;
+  }
+  @keyframes suptitle {
+    0% {
+      font-size: 0px;
+    }
+    100% {
+      font-size: 32px;
+    }
   }
 
   .intro_title {
     font-size: 80px;
+    animation: title 2s linear;
   }
-
+  @keyframes title {
+    0% {
+      font-size: 0px;
+    }
+    100% {
+      font-size: 80px;
+    }
+  }
   .nav {
     display: none;
   }
@@ -1164,7 +1216,6 @@ img {
     margin: 0;
     padding: 5px 15px;
   }
-
 
   .nav_toggle {
     display: block;
@@ -1278,8 +1329,16 @@ img {
 @media (max-width: 550px) {
   .intro_title {
     font-size: 40px;
+    animation: title 2s linear;
   }
-
+  @keyframes title {
+    0% {
+      font-size: 0;
+    }
+    100% {
+      font-size: 40px;
+    }
+  }
   .btn {
     margin-bottom: 40px;
   }
